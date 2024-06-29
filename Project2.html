@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Product Quantity:-
+            <span id="qty-tag"></span>
+        </h1>
+        <button id="inc-btn">Increment</button>
+        <button id="dec-btn">Decrement</button>
+    </div>
+
+    <!--Script Code-->
+    <script>
+        let qtyTag=document.getElementById('qty-tag');
+        let incBtn=document.getElementById('inc-btn');
+        let decBtn=document.getElementById('dec-btn');
+
+
+        let qty=0;
+        qtyTag.textContent=qty;
+
+        //INC FUNCTION
+        function incQty()
+        {
+            qty++;
+            qtyTag.textContent=qty;
+        }
+
+        //Dec Functionality
+        function decQty()
+        {
+            if(qty>0)
+            {
+                qty--;
+                qtyTag.textContent=qty;
+            }
+            else
+                qtyTag.textContent='Your Card is Empty';
+        }
+
+        incBtn.addEventListener('click',incQty);
+        decBtn.addEventListener('click',decQty);
+    </script>
+    
+</body>
+</html>
